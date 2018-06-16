@@ -49,10 +49,7 @@ deploy:
     tags: false
     repo: ALGPHELLO/android_kernel_condor_gnsz6753_66_n
     branch: master
-before_script:
-  - cd android_kernel_condor_gnsz6753_66_n/tools
-  - mkdir tools
-  - cd
+
 branches:
   except:
     - /^(?i:untagged)-.*$/
