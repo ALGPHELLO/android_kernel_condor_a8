@@ -1,5 +1,8 @@
 #!/bin/bash
 # Default settings
+cd ~/tools
+mkdir tools
+cd
 verfile="android.ver"
 curcfg=".config"
 release="n"
