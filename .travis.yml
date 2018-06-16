@@ -1,53 +1,22 @@
-language: c
-#######################################################################################
-os:
-  - linux
-  
-sudo: enabled
-
-addons:
-  apt:
-    packages:
-      - curl
-
-#######################################################################################
-
+sudo: required
+language: cpp
+compiler: gcc
+dist: trusty
 
 before_install:
-
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   - sudo apt-get update -qq
-  
-  - git clone https://android.googlesource.com/platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9 ~/aarch64-linux-android-4.9/
-  
-  - sudo chmod -R a+x *
 
-#######################################################################################
+install: 
+  - sudo apt-get install -qq g++-7 
+  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 90
+  - sudo bash ./gcc-fix.sh
 
+script: 
+  - bash travis.sh
 
-script:  
-  - export ARCH=arm64
-  - export ARCH_MTK_PLATFORM=mt6753
-  - export CROSS_COMPILE=~/aarch64-linux-android-4.9/bin/aarch64-linux-android-
-  - export KBUILD_BUILD_USER="fujitsu"
-  - export KBUILD_BUILD_HOST="ALGPHELLO"
-  - KERNEL_DIR=$PWD/android_kernel_condor_gnsz6753_66_n
-  - ZIMAGE=$KERNEL_DIR/arch/arm64/boot/zImage
-  - make gnsz6753_66_n_defconfig 
-  - make -j16 bootimage
-  #- make ARCH=arm64 -j16 clean mrproper
+cache:
+  - ccache
 
-after_success:
-  - curl --upload-file arch/arm64/boot/zImage https://transfer.sh/condor_gnsz6753_66_n_kernel
-  
-deploy:
-  skip_cleanup: true
-  provider: releases
-  api_key: "$GIT_OAUTH_TOKEN_TB"
-  
-  on:
-    tags: false
-    repo: ALGPHELLO/android_kernel_condor_gnsz6753_66_n
-    branch: master
-branches:
-  except:
-    - /^(?i:untagged)-.*$/
+group: travis_latest
+os: linux
