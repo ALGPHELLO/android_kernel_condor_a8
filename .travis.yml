@@ -25,7 +25,7 @@ before_install:
 
 
 script:  
-  #- bash build.sh
+  - bash build.sh
   #- export ARCH=arm64
   #- export ARCH_MTK_PLATFORM=mt6753
   #- export CROSS_COMPILE=~/aarch64-linux-android-4.9/bin/aarch64-linux-android-
