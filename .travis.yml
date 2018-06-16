@@ -50,7 +50,7 @@ deploy:
     repo: ALGPHELLO/android_kernel_condor_gnsz6753_66_n
     branch: master
 before_script:
-  - cd ~/home/travis/build/ALGPHELLO/android_kernel_condor_gnsz6753_66_n/tools
+  - cd android_kernel_condor_gnsz6753_66_n/tools
   - mkdir tools
   - cd
 branches:
