@@ -8,5 +8,5 @@ STRIP="aarch64-linux-gnu/bin/aarch64-linux-gnu-strip";
 export CCOMPILE=$CROSS_COMPILE;
 export CROSS_COMPILE="/usr/bin/ccache aarch64-linux-gnu-" ;
 export PATH=$PATH:./aarch64-linux-gnu/bin/ ;
-make haruhi_defconfig;
+make gnsz6753_66_n_defconfig;
 make -j$(nproc --all);
