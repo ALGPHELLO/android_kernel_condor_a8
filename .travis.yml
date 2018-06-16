@@ -25,14 +25,14 @@ before_install:
 
 
 script:  
-  - 
-  - export ARCH=arm64
-  - export ARCH_MTK_PLATFORM=mt6753
-  - export CROSS_COMPILE=~/aarch64-linux-android-4.9/bin/aarch64-linux-android-
-  - export KBUILD_BUILD_USER="fujitsu"
-  - export KBUILD_BUILD_HOST="ALGPHELLO"
-  - KERNEL_DIR=$PWD/android_kernel_condor_gnsz6753_66_n
-  - ZIMAGE=$KERNEL_DIR/arch/arm64/boot/zImage
+  #- bash build.sh
+  #- export ARCH=arm64
+  #- export ARCH_MTK_PLATFORM=mt6753
+  #- export CROSS_COMPILE=~/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+  #- export KBUILD_BUILD_USER="fujitsu"
+  #- export KBUILD_BUILD_HOST="ALGPHELLO"
+  #- KERNEL_DIR=$PWD/android_kernel_condor_gnsz6753_66_n
+  #- ZIMAGE=$KERNEL_DIR/arch/arm64/boot/zImage
   - make gnsz6753_66_n_defconfig 
   - make -j16
   #- make ARCH=arm64 -j16 clean mrproper
