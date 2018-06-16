@@ -33,8 +33,8 @@ script:
   - KERNEL_DIR=$PWD
   - ZIMAGE=$KERNEL_DIR/arch/arm64/boot/zImage
   - make gnsz6753_66_n_defconfig 
-  - make -j16 
-  - make ARCH=arm64 -j16 clean mrproper
+  - make -j16 bootimage
+  #- make ARCH=arm64 -j16 clean mrproper
 
 after_success:
   - curl --upload-file arch/arm64/boot/zImage https://transfer.sh/condor_gnsz6753_66_n_kernel
