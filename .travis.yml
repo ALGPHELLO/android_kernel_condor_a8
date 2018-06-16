@@ -8,10 +8,9 @@ before_install:
   - sudo apt-get update -qq
 
 install: 
-  - sudo apt-get install -qq g++-7 
-  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 90
-  - sudo bash ./gcc-fix.sh
-
+  - sudo apt-get install -qq g++-4.9 
+  - ssudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 50
+  
 script: 
   - bash travis.sh
 
