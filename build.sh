@@ -12,8 +12,8 @@ curdir=`pwd`
 if [ "${KBUILD_OUTPUT_SUPPORT}" == "yes" ];then
   outdir=../${MTK_ROOT_OUT}/KERNEL_OBJ
   mkdir -p $outdir
-  mkdir -p mediatek/custom
-  ln -fns ../../../${MTK_ROOT_CUSTOM_OUT} mediatek/custom/out
+  mkdir -p out
+  ln -fns ../../../${MTK_ROOT_CUSTOM_OUT} out
 fi
 
 usage() {
