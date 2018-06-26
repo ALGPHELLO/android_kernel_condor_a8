@@ -400,7 +400,7 @@ extern int get_cpu_target_tj(void);
 extern int get_cpu_target_offset(void);
 
 extern int mtk_mdm_get_md_info(struct md_info **p_inf, int *size);
-extern int mtk_gpufreq_register(struct mt_gpufreq_power_table_info *freqs, int num);
+/* extern int mtk_gpufreq_register(struct mt_gpufreq_power_table_info *freqs, int num); */
 
 extern int get_target_tj(void);
 
