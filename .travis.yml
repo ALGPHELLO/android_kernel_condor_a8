@@ -51,7 +51,7 @@ deploy:
   api_key: "$GIT_OAUTH_TOKEN_TB"
   
   on:
-    tags: false
+    tags: true
     repo: ALGPHELLO/android_kernel_condor_gnsz6753_66_n
     branch: Nougat
 
