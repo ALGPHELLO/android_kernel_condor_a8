@@ -33,7 +33,7 @@ script:
   - export KBUILD_BUILD_HOST="ALGPHELLO"
   - KERNEL_DIR=$PWD/android_kernel_condor_gnsz6753_66_n
   - ZIMAGE=$KERNEL_DIR/arch/arm64/boot/zImage
-  - make $KERNEL_DIR/tools/tools
+  - make /home/travis/build/ALGPHELLO/android_kernel_condor_gnsz6753_66_n/tools/tools
   - make gnsz6753_66_n_defconfig 
   - bash build.sh
   - make -j16
