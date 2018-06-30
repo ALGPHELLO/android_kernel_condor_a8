@@ -1,0 +1,5 @@
+mkdir /android && cd /android
+git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/
+export CROSS_COMPILE=/android/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+make ARCH=arm64 CROSS_COMPILE=$CROSS_COMPILE <device_defconfig>
+make ARCH=arm64 CROSS_COMPILE=$CROSS_COMPILE -j <cpu_thread_number>
