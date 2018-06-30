@@ -17,7 +17,7 @@ before_install:
 
   - sudo apt-get update -qq
   
-  - git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/ ~/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/
+  - git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/ ~/aarch64-linux-android-4.9/
   
   - sudo chmod -R a+x *
 
@@ -26,7 +26,7 @@ before_install:
 
 script:  
   
-  - export export CROSS_COMPILE=/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+  - export export CROSS_COMPILE=/aarch64-linux-android-4.9/bin/aarch64-linux-android-
   - export ARCH_MTK_PLATFORM=mt6753
   - export make ARCH=arm64 CROSS_COMPILE=$CROSS_COMPILE gnsz6753_66_n_defconfig
   - export KBUILD_BUILD_USER="fujitsu"
