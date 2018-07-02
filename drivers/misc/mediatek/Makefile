@@ -11,7 +11,7 @@
 # GNU General Public License for more details.
 #
 
-#$(call all-subdir-src-or-makefile)
+$(call all-subdir-src-or-makefile)
 MTK_PLATFORM := $(subst ",,$(CONFIG_MTK_PLATFORM))
 subdir-ccflags-y += -Werror
 subdir-ccflags-y += -I$(srctree)/drivers/misc/mediatek/include
@@ -192,9 +192,9 @@ obj-$(CONFIG_MTK_EMI_MPU)	+= emi_mpu/
 obj-$(CONFIG_MTK_MJC_DRIVER)	+= mjc/
 obj-$(CONFIG_MD32_SUPPORT)     += md32/
 obj-$(CONFIG_MTK_EMI_MBW) += emi_mbw/
-ifneq ($(wildcard $(srctree)/drivers/misc/mediatek/tc1_interface/),)
-obj-$(CONFIG_MTK_TC1_FEATURE)   += tc1_interface/
-endif
+#ifneq ($(wildcard $(srctree)/drivers/misc/mediatek/tc1_interface/),)
+#obj-$(CONFIG_MTK_TC1_FEATURE)   += tc1_interface/
+#endif
 obj-$(CONFIG_MTK_BTCVSD) += btcvsd/
 obj-$(CONFIG_MTK_MTD_NAND) += nand/
 obj-$(CONFIG_MTK_DUM_CHAR) += dum-char/
