@@ -27,11 +27,11 @@ $(warning "MTK_PATH_PLATFORM=$(MTK_PATH_PLATFORM)")
 ccflags-y += -I$(srctree)/drivers/misc/mediatek/mach/$(MTK_PLATFORM)/include/trustzone/utils/tlutils
 
 #Now drm is 32 only
-#ifeq ($(CONFIG_ARM64), y)
-#include $(srctree)/drivers/misc/mediatek/gud/Makefile.include
-#else
+ifeq ($(CONFIG_ARM64), y)
 include $(srctree)/drivers/misc/mediatek/gud/Makefile.include
-#endif
+else
+include $(srctree)/drivers/misc/mediatek/gud/Makefile.include
+endif
 obj-y += secwidevine.o
 
 endif
