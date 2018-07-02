@@ -35,7 +35,7 @@ script:
   - mkdir -p out
   - make O=out clean
   - make O=out mrproper
-  - make O=out gnsz6737t_36g_n_defconfig
+  - make O=out gnsz6753_36g_n_defconfig
   - make O=out -j16
   #- make gionee6737t_66_m0_defconfig
   #- make gionee6735_65u_m0_defconfig
