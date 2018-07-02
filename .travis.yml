@@ -39,7 +39,7 @@ script:
   #- make O=out -j16
   #- make gionee6737t_66_m0_defconfig
   #- make gionee6735_65u_m0_defconfig
-  - make gionee6737t_36_m0_defconfig
+  - make gnsz6737t_36g_n_defconfig
   #- bash build.sh
   - make -j16
   #- make ARCH=arm64 -j16 clean mrproper
