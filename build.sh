@@ -61,7 +61,7 @@ while test -n "$1"; do
     shift
 done
 
-source ../mediatek/build/shell.sh ../ kernel
+#source ../mediatek/build/shell.sh ../ kernel
 defcfg="${MTK_ROOT_GEN_CONFIG}/kconfig"
 if [ "${KBUILD_OUTPUT_SUPPORT}" == "yes" ]; then
   makeflags+=" O=$outdir"
@@ -99,9 +99,9 @@ if [ "${rebuild}" == "y" ]; then make_clean; fi
 echo "**** Configuring / $defcfg / ****"
 # select correct configuration file
 if [ "${KBUILD_OUTPUT_SUPPORT}" == "yes" ]; then
-  make mediatek-configs O=$outdir
+  make gnsz6753_66_n_defconfig O=$outdir
 else
-  make mediatek-configs
+  make gnsz6753_66_n_defconfig
 fi
 
 # Config DRAM size according to central Project Configuration file setting
