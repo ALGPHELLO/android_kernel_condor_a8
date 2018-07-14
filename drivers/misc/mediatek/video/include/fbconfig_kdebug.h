@@ -15,7 +15,7 @@
 #define __FBCONFIG_KDEBUG_H
 
 #include <linux/types.h>
-#include "ddp_ovl.h"
+#include "../mt6735/mt6753/ddp_ovl.h"
 
 void PanelMaster_Init(void);
 void PanelMaster_Deinit(void);
