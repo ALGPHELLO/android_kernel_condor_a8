@@ -32,7 +32,7 @@ script:
   #- export KERNEL=kernel-3.18
   - KERNEL_DIR=$PWD/android_kernel_condor_gnsz6753_66_n
   - ZIMAGE=$KERNEL_DIR/arch/arm64/boot/zImage
-  - export OUTDIR=$HOMEDIR/out/target/product/$PROJECT/obj/KERNEL_OBJ
+  - export OUTDIR=out/target/product/$PROJECT/obj/KERNEL_OBJ
   - make -C O=$OUTDIR ROOTDIR=$ROOTDIR ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE ${CONFIG}_defconfig
   #- mkdir -p out
   #- make O=out clean
